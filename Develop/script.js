@@ -11,13 +11,13 @@ $(function () {
 
 
 
-const currentHour = now.hour(); // Get current hour in 24 hour format
+const currentHour = dayjs().hour; // Get current hour in 24 hour format
 
 $(".time-block").each(function () {
-  const timeBlockId = $(this).attr("id");
+  const timeBlockId = $(this).attr("id"); // Get the ID of the time block
   const timeBlockHour = parseInt(timeBlockId.split("-")[1]); // Extract hour from id
   
-  if (timeBlockHour , currentHour) {
+  if (timeBlockHour < currentHour) {
     $(this).addClass("past"); 
   } else if (timeBlockHour === currentHour) {
     $(this).addClass("present");
