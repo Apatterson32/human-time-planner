@@ -1,3 +1,32 @@
+$(function () {
+  // Get a reference to the #currentDay element
+  const currentDayElement = $("#currentDay");
+
+  // Get the current date using Day.js and format it
+  const currentDate = dayjs().format('MMMM D, YYYY');
+
+  // Update the #currentDay element with the current date
+  currentDayElement.text(currentDate);
+});
+
+
+
+const currentHour = now.hour(); // Get current hour in 24 hour format
+
+$(".time-block").each(function () {
+  const timeBlockId = $(this).attr("id");
+  const timeBlockHour = parseInt(timeBlockId.split("-")[1]); // Extract hour from id
+  
+  if (timeBlockHour , currentHour) {
+    $(this).addClass("past"); 
+  } else if (timeBlockHour === currentHour) {
+    $(this).addClass("present");
+  } else {
+    $(this).addClass("future");
+  }
+});
+
+
 
 $(document).on("click", ".saveBtn", function () {
   // Get ID of the parent time-block
@@ -31,10 +60,3 @@ $(document).on("click", ".saveBtn", function () {
 //   // TODO: Add code to get any user input that was saved in localStorage and set
 //   // the values of the corresponding textarea elements. HINT: How can the id
 //   // attribute of each time-block be used to do this?
-//   //
-//   // TODO: Add code to display the current date in the header of the page.
-
-//   const currentDate = day.js().format('MMMM D, YYYY')
-
-//   //Update
-// });
