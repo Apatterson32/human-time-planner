@@ -1,7 +1,15 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
-$(function () {
+
+$(document).on("click", ".saveBtn", function () {
+  // Get ID of the parent time-block
+  const timeBlockId = $(this).parent().attr("id");
+  
+  // Get user input from the textarea within the same time-block
+  const userInput = $(this).siblings(".description").val();
+
+  // Save user input in local storage with the time-block ID as the key
+  localStorage.setItem(timeBlockId, userInput);
+});
+
   
     
   // TODO: Add a listener for click events on the save button. This code should
@@ -17,16 +25,16 @@ $(function () {
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
 
-const now = dayjs(); 
-  console.log(now.format()); // Format and display the date and time
+// const now = dayjs(); 
+//   console.log(now.format()); // Format and display the date and time
 
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
-  // TODO: Add code to display the current date in the header of the page.
+//   // TODO: Add code to get any user input that was saved in localStorage and set
+//   // the values of the corresponding textarea elements. HINT: How can the id
+//   // attribute of each time-block be used to do this?
+//   //
+//   // TODO: Add code to display the current date in the header of the page.
 
-  const currentDate = day.js().format('MMMM D, YYYY')
+//   const currentDate = day.js().format('MMMM D, YYYY')
 
-  //Updat 
-});
+//   //Update
+// });
