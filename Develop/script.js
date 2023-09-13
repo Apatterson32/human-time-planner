@@ -11,11 +11,31 @@ $(function () {
 
 
 
-const currentHour = dayjs().hour; // Get current hour in 24 hour format
+const currentHour = dayjs().hour(); // Get current hour in 24 hour format
+
+// // Defines scroll target based on time of day
+// let scrollTarget = 0;
+
+// if (currentTime >= 6 && currentTime < 12) {
+
+//   scrollTarget = 500;
+// } else if (currentTime >= 12 && currentTime < 18) {
+
+//   scrollTarget = 1000;
+// }
+// else if (currentTime >= 18 && currentTime <24) {
+
+//   scrollTarget = 1500;
+// }
+
+// // Scroll to section with smooth behavior
+// window.scrollTo({
+//   top: scrollTarget,
+//   behavior: 'smooth'
+// });
 
 $(".time-block").each(function () {
-  const timeBlockId = $(this).attr("id"); // Get the ID of the time block
-  const timeBlockHour = parseInt(timeBlockId.split("-")[1]); // Extract hour from id
+  const timeBlockHour = parseInt($(this).attr("id").split("-")[1]); // Extract hour from id
   
   if (timeBlockHour < currentHour) {
     $(this).addClass("past"); 
