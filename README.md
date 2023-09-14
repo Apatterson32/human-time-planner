@@ -10,6 +10,6 @@ In this application, you will find it to be aesthetically pleasing to the eye th
 Alissa Patterson
 pattersonal10@gmail.com
 https://github.com/Apatterson32
-Live Website:
+Live Website: https://apatterson32.github.io/human-time-planner/
 
 [Screenshot](<Day Planner Assignment.png>)
