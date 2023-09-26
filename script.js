@@ -15,6 +15,14 @@ const currentHour = dayjs().hour(); // Get current hour in 24 hour format
 
 
 $(".time-block").each(function () {
+  const timeBlockId = $(this).attr("id");
+  const storedData = localStorage.getItem(timeBlockId);
+
+  if (storedData) {
+    $(this).find(".description").val(storedData);
+  }
+  
+
   const timeBlockHour = parseInt($(this).attr("id").split("-")[1]); // Extract hour from id
   
   if (timeBlockHour < currentHour) {
